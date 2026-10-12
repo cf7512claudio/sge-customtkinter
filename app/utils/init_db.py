@@ -1,9 +1,10 @@
 from app.models import db
 from app.models.user import User
+from app.models.category import Category
 
 def create_tables():
     with db:
-        db.create_tables([User])
+        db.create_tables([User, Category])
 
 def create_admin():           
     admin_username = "admin"

@@ -12,20 +12,6 @@ class MainWindow(ctk.CTk):
         super().__init__()
 
         self.user = user
-import customtkinter as ctk
-from app.models.user import User
-from app.views.pages.dashboard import DashboardPage
-from app.views.pages.categories import CategoriesPage
-from app.views.pages.products import ProductsPage
-from app.views.pages.stock import StockPage
-from app.views.pages.suppliers import SuppliersPage
-from app.views.pages.users import UsersPage
-
-class MainWindow(ctk.CTk):
-    def __init__(self, user):
-        super().__init__()
-
-        self.user = user
         self.current_page = None
         self.selected_button = None
 
