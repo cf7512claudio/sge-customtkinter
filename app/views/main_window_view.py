@@ -1,4 +1,6 @@
 import customtkinter as ctk
+from PIL import Image
+
 from app.models.user import User
 from app.views.pages.dashboard import DashboardPage
 from app.views.pages.categories import CategoriesPage
@@ -24,9 +26,13 @@ class MainWindow(ctk.CTk):
         self.grid_rowconfigure(0, weight=1)
 
         # Sidebar
-        self.sidebar = ctk.CTkFrame(self, width=200, corner_radius=0, fg_color= "#28272D")
+        self.sidebar = ctk.CTkFrame(self, width=200, corner_radius=0, fg_color= "#151515")
         self.sidebar.grid(row=0, column=0, sticky="nswe")
         self.sidebar.grid_rowconfigure(7, weight=1)
+
+        self.icon_title = ctk.CTkImage(light_image= Image.open("app/assets/inventory.png"), dark_image= Image.open("app/assets/inventory.png"), size= (36,36))
+
+        ctk.CTkLabel(self.sidebar, text= " SGE", image= self.icon_title, compound= "left", font= ("Helvetica", 36, "bold"), text_color= "#bf4342").pack(pady=16, padx=10)
 
         ctk.CTkLabel(self.sidebar, text="MENU", font= ("Helvetica", 16, "bold")).pack(pady=30, padx=50)
 
@@ -56,7 +62,7 @@ class MainWindow(ctk.CTk):
                 text= text,
                 width= 176,
                 bg_color= "transparent",
-                fg_color= "#28272D",
+                fg_color= "#151515",
                 hover_color= "#1D1C20",
                 command= lambda p=page: self.show_page(p)
             )
@@ -71,13 +77,13 @@ class MainWindow(ctk.CTk):
             if page == DashboardPage:
                 self.selected_button = btn
                 btn.configure(
-                    fg_color="#FF7312"
+                    fg_color= "#bf4342"
                 )
 
     def select_button(self, button, page):
 
-        SIDEBAR_COLOR = "#28272D"
-        SIDEBAR_ACTIVE = "#FF7312"
+        SIDEBAR_COLOR = "#151515"
+        SIDEBAR_ACTIVE = "#bf4342"
 
         # Volta o botão anterior para a cor normal
         if self.selected_button is not None:

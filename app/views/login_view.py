@@ -10,7 +10,7 @@ class LoginWindow(ctk.CTk):
 
         self.title("SGE - LOGIN")
         self.geometry("450x300")
-        self.configure(fg_color="#28272D")
+        self.configure(fg_color="#191919")
 
         TITLE_FONT = ctk.CTkFont(
             family= "Helvetica",
@@ -27,7 +27,7 @@ class LoginWindow(ctk.CTk):
         self.entry_password = ctk.CTkEntry(self, placeholder_text="Senha...", show="*", corner_radius=12, border_width=0, width=300)
         self.entry_password.pack(pady=16)
 
-        self.button_login = ctk.CTkButton(self, text="Login", corner_radius=12, bg_color="transparent", fg_color="#FF7312", hover_color="#848484", font=("Helvetica",16, "bold"), text_color="#fcfcfc", height=40, command=self.login)
+        self.button_login = ctk.CTkButton(self, text="Login", corner_radius=12, bg_color="transparent", fg_color="#bf4342", hover_color="#848484", font=("Helvetica",16, "bold"), text_color="#fcfcfc", height=40, command=self.login)
         self.button_login.pack(pady=24)
 
     def login(self):
