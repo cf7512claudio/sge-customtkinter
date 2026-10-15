@@ -60,13 +60,14 @@ class MainWindow(ctk.CTk):
             btn = ctk.CTkButton(
                 self.sidebar,
                 text= text,
-                width= 176,
+                width= 170,
                 bg_color= "transparent",
                 fg_color= "#151515",
                 hover_color= "#1D1C20",
+                anchor= ctk.W,
                 command= lambda p=page: self.show_page(p)
             )
-            btn.pack(pady=4, padx=12)
+            btn.pack(pady=6, padx=12)
 
             # Agora btn já existe
             btn.configure(
@@ -77,13 +78,13 @@ class MainWindow(ctk.CTk):
             if page == DashboardPage:
                 self.selected_button = btn
                 btn.configure(
-                    fg_color= "#bf4342"
+                    fg_color= "#1D1C20"
                 )
 
     def select_button(self, button, page):
 
         SIDEBAR_COLOR = "#151515"
-        SIDEBAR_ACTIVE = "#bf4342"
+        SIDEBAR_ACTIVE = "#1D1C20"
 
         # Volta o botão anterior para a cor normal
         if self.selected_button is not None:
